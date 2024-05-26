@@ -41,7 +41,7 @@ const SessionPanel = memo<PropsWithChildren>(({ children }) => {
     if (!size) return;
     const nextWidth = typeof size.width === 'string' ? Number.parseInt(size.width) : size.width;
     if (isEqual(nextWidth, sessionsWidth)) return;
-    setWidth(nextWidth);
+    setWidth(nextWidth as number);
     updatePreference({ sessionsWidth: nextWidth });
   };
 
